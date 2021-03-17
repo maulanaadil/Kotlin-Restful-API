@@ -1,18 +1,18 @@
 ### CREATE PRODUCT
-POST http://localhost:8080/api/products
+POST http://localhost:8083/api/products
 X-Api-Key: ADMIN
 Content-Type: application/json
 Accept: application/json
 
 {
-  "id": "A011",
-  "name": "Xiaomi",
-  "price":90000000,
+  "id": "A003",
+  "name": "Asus ROG",
+  "price":80000000,
   "quantity": 10
 }
 
 ### CREATE PRODUCT INVALID
-POST http://localhost:8080/api/products
+POST http://localhost:8083/api/products
 X-Api-Key: ADMIN
 Content-Type: application/json
 Accept: application/json
@@ -25,29 +25,29 @@ Accept: application/json
 }
 
 ### GET PRODUCT
-GET http://localhost:8080/api/products/A001
+GET http://localhost:8083/api/products/A001
 X-Api-Key: ADMIN
 Accept: application/json
 
 ### GET PRODUCT WRONG
-GET http://localhost:8080/api/products/A005
+GET http://localhost:8083/api/products/A005
 X-Api-Key: ADMIN
 Accept: application/json
 
 ### UPDATE PRODUCT
-PUT http://localhost:8080/api/products/A010
+PUT http://localhost:8083/api/products/A001
 X-Api-Key: ADMIN
 Content-Type: application/json
 Accept: application/json
 
 {
-  "name": "Razer Blade",
+  "name": "MSI GF63",
   "price": 9000000,
   "quantity": 200
 }
 
 ### UPDATE PRODUCT INVALID BODY
-PUT http://localhost:8080/api/products/A001
+PUT http://localhost:8083/api/products/A001
 X-Api-Key: ADMIN
 Content-Type: application/json
 Accept: application/json
@@ -59,16 +59,16 @@ Accept: application/json
 }
 
 ### DELETE PRODUCT
-DELETE http://localhost:8080/api/products/A001
+DELETE http://localhost:8083/api/products/A001
 X-Api-Key: ADMIN
 Accept: application/json
 
 ### LIST PRODUCT
-GET http://localhost:8080/api/products
+GET http://localhost:8083/api/products
 X-Api-Key: ADMIN
 Accept: application/json
 
 ### LIST PRODUCT With size parameter
-GET http://localhost:8080/api/products?size=5&page=1
+GET http://localhost:8083/api/products?size=5&page=1
 X-Api-Key: ADMIN
 Accept: application/json
