@@ -1,0 +1,74 @@
+### CREATE PRODUCT
+POST http://localhost:8080/api/products
+X-Api-Key: ADMIN
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "A011",
+  "name": "Xiaomi",
+  "price":90000000,
+  "quantity": 10
+}
+
+### CREATE PRODUCT INVALID
+POST http://localhost:8080/api/products
+X-Api-Key: ADMIN
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "",
+  "name": "Macbook Pro",
+  "price": 0,
+  "quantity": -2
+}
+
+### GET PRODUCT
+GET http://localhost:8080/api/products/A001
+X-Api-Key: ADMIN
+Accept: application/json
+
+### GET PRODUCT WRONG
+GET http://localhost:8080/api/products/A005
+X-Api-Key: ADMIN
+Accept: application/json
+
+### UPDATE PRODUCT
+PUT http://localhost:8080/api/products/A010
+X-Api-Key: ADMIN
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Razer Blade",
+  "price": 9000000,
+  "quantity": 200
+}
+
+### UPDATE PRODUCT INVALID BODY
+PUT http://localhost:8080/api/products/A001
+X-Api-Key: ADMIN
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "",
+  "price": 0,
+  "quantity": -2
+}
+
+### DELETE PRODUCT
+DELETE http://localhost:8080/api/products/A001
+X-Api-Key: ADMIN
+Accept: application/json
+
+### LIST PRODUCT
+GET http://localhost:8080/api/products
+X-Api-Key: ADMIN
+Accept: application/json
+
+### LIST PRODUCT With size parameter
+GET http://localhost:8080/api/products?size=5&page=1
+X-Api-Key: ADMIN
+Accept: application/json
